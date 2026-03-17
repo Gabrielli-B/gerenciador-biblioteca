@@ -1,4 +1,5 @@
 import validacao
+from gerarIsbn import gerarIsbn
 
 class Livro:
     def __init__ (self,titulo,autor,anoPublicacao, genero,notaAvaliacao):
@@ -6,6 +7,7 @@ class Livro:
         validacao.validarNotaAvaliacao(notaAvaliacao)
         validacao.validarGenero(genero)
 
+        self.isbn = gerarIsbn()
         self.titulo = titulo
         self.autor = autor
         self.anoPublicacao = anoPublicacao
