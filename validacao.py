@@ -14,3 +14,4 @@ def validarAnoPublicacao(ano):
 def validarGenero(genero):
      if not isinstance(genero,Genero):
           raise GeneroInvalidoError("Gênero inválido")
+

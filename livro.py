@@ -15,6 +15,7 @@ class Livro:
         self.notaAvaliacao = notaAvaliacao
 
     def exibirDetalhes(self):
+        print("ISBN.................... "+str(self.isbn))
         print("Titulo.................. "+self.titulo)
         print("Autor................... "+self.autor)
         print("Ano de Publicacao....... "+str(self.anoPublicacao))

@@ -7,3 +7,6 @@ class AnoInvalidoError(Exception):
 
 class GeneroInvalidoError(Exception):
     pass
+
+class LivroNaoEncontradoError(Exception):
+    pass
