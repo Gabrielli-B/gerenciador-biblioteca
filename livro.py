@@ -1,10 +1,11 @@
 import validacao
 
 class Livro:
-    def __init__ (self,titulo,autor,anoPublicacao,genero,notaAvaliacao):
+    def __init__ (self,titulo,autor,anoPublicacao, genero,notaAvaliacao):
         validacao.validarAnoPublicacao(anoPublicacao)
         validacao.validarNotaAvaliacao(notaAvaliacao)
-        
+        validacao.validarGenero(genero)
+
         self.titulo = titulo
         self.autor = autor
         self.anoPublicacao = anoPublicacao

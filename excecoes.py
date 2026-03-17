@@ -4,3 +4,6 @@ class NotaInvalidaError(Exception):
 
 class AnoInvalidoError(Exception):
     pass
+
+class GeneroInvalidoError(Exception):
+    pass
