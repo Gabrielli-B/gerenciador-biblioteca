@@ -1,5 +1,6 @@
 import livro
 import json
+from enums import Genero
 from excecoes import LivroNaoEncontradoError
 
 listaLivros = {}
@@ -38,14 +39,15 @@ def escreverArquivo():
     json_string = json.dumps(dados)
     arquivo.write(json_string)
 
-    arquivo.close
+    arquivo.close()
 
 def carregarLivrosArquivo():
     try:
-        arquivo = open("livros","r")
+        arquivo = open("livros.txt","r")
         dados = json.load(arquivo)
         arquivo.close()
 
+        global listaLivros
         listaLivros={}
 
         for isbn, info in dados.items():
@@ -53,10 +55,10 @@ def carregarLivrosArquivo():
                 info["titulo"],
                 info["autor"],
                 info["anoPublicacao"],
-                info["genero"],
+                Genero(info["genero"]),
                 info["notaAvaliacao"]
             )
-        novoLivro.isbn = isbn
-        listaLivros[isbn] = novoLivro
+            novoLivro.isbn = isbn
+            listaLivros[isbn] = novoLivro
     except FileNotFoundError:
         print("Arquivo não encontrado. Nenhum livro foi carregado.")

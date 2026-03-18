@@ -1,4 +1,5 @@
 import gerenciarBiblioteca
+from enums import Genero
 
 def menuInformativo():
     print("1 - Cadastrar Livro")
@@ -20,8 +21,15 @@ def menu():
             titulo = input("Título: ")
             autor = input("Autor: ")
             anoPublicacao = int(input("Ano publicação: "))
-            genero = input("Gênero: ")
-            notaAvaliacao =input("Nota avaliação: ")
+            notaAvaliacao =int(input("Nota avaliação: "))
+
+            genero = input("Gênero: ").upper()
+            try:
+                genero = Genero[genero]
+            except KeyError:
+                print("Genero inválido")
+                continue
+
             gerenciarBiblioteca.cadastrarLivro(titulo,autor,anoPublicacao, genero,notaAvaliacao)
             gerenciarBiblioteca.escreverArquivo()
 

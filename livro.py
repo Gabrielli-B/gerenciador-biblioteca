@@ -28,7 +28,7 @@ class Livro:
             "titulo": self.titulo,
             "autor": self.autor,
             "anoPublicacao": self.anoPublicacao,
-            "genero": self.genero,
+            "genero": self.genero.value,
             "notaAvaliacao": self.notaAvaliacao
         }
 
