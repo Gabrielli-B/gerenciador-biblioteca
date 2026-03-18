@@ -22,4 +22,13 @@ class Livro:
         print("Genero.................. "+self.genero)
         print("Nota de avaliação....... "+str(self.notaAvaliacao))
 
+    def to_dict(self):
+        return{
+            "isbn": self.isbn,
+            "titulo": self.titulo,
+            "autor": self.autor,
+            "anoPublicacao": self.anoPublicacao,
+            "genero": self.genero,
+            "notaAvaliacao": self.notaAvaliacao
+        }
 

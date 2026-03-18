@@ -1,4 +1,5 @@
 import livro
+import json
 from excecoes import LivroNaoEncontradoError
 
 listaLivros = {}
@@ -17,7 +18,7 @@ def encontrarLivroIsb(isbn):
     raise LivroNaoEncontradoError("Livro não foi encontrado")
 
 def encontrarLivroTitulo(titulo):
-    if livro in listaLivros.values():
+    for livro in listaLivros.values():
         if livro.titulo.lower() == titulo.lower():
             return livro
     else:
@@ -26,3 +27,14 @@ def encontrarLivroTitulo(titulo):
 def deletarLivro(isbn):
     encontrarLivroIsb(isbn)
     del listaLivros[isbn]
+
+def escreverArquivo():
+    arquivo = open("livros.txt","w")
+    dados = {}
+    for isbn, livro in listaLivros.items():
+        dados[isbn] = livro.to_dict()
+
+    json_string = json.dumps(dados)
+    arquivo.write(json_string)
+    
+    arquivo.close
