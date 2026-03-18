@@ -27,6 +27,7 @@ def encontrarLivroTitulo(titulo):
 def deletarLivro(isbn):
     encontrarLivroIsb(isbn)
     del listaLivros[isbn]
+    print("Livro deletado com sucesso!")
 
 def escreverArquivo():
     arquivo = open("livros.txt","w")
