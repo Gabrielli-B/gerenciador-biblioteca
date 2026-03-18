@@ -36,5 +36,26 @@ def escreverArquivo():
 
     json_string = json.dumps(dados)
     arquivo.write(json_string)
-    
+
     arquivo.close
+
+def carregarLivrosArquivo():
+    try:
+        arquivo = open("livros","r")
+        dados = json.load(arquivo)
+        arquivo.close()
+
+        listaLivros={}
+
+        for isbn, info in dados.items():
+            novoLivro = livro.Livro(
+                info["titulo"],
+                info["autor"],
+                info["anoPublicacao"],
+                info["genero"],
+                info["notaAvaliacao"]
+            )
+        novoLivro.isbn = isbn
+        listaLivros[isbn] = novoLivro
+    except FileNotFoundError:
+        print("Arquivo não encontrado. Nenhum livro foi carregado.")
