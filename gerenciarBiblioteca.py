@@ -11,7 +11,18 @@ def listarLivros():
     for livros in listaLivros.values():
         livros.exibirDetalhes()
 
-def encontrarLivro(isbn):
+def encontrarLivroIsb(isbn):
     if isbn in listaLivros:
         return listaLivros[isbn]
     raise LivroNaoEncontradoError("Livro não foi encontrado")
+
+def encontrarLivroTitulo(titulo):
+    if livro in listaLivros.values():
+        if livro.titulo.lower() == titulo.lower():
+            return livro
+    else:
+        raise LivroNaoEncontradoError("Livro não foi encontrado")
+
+def deletarLivro(isbn):
+    encontrarLivroIsb(isbn)
+    del listaLivros[isbn]
