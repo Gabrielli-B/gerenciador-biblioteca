@@ -1,0 +1,1 @@
+{"2385182302939": {"isbn": 2385182302939, "titulo": "Harry Potter", "autor": "J.K Rowling", "anoPublicacao": 2007, "genero": "Fantasia", "notaAvaliacao": 9}, "9506784467339": {"isbn": 9506784467339, "titulo": "percy jackson", "autor": "joana silva", "anoPublicacao": 2010, "genero": "Aventura", "notaAvaliacao": 8}}

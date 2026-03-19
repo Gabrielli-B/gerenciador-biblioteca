@@ -12,6 +12,7 @@ def cadastrarLivro(titulo,autor,anoPublicacao, genero,notaAvaliacao):
 def listarLivros():
     for livros in listaLivros.values():
         livros.exibirDetalhes()
+        print("------------------------------------")
 
 def encontrarLivroIsb(isbn):
     if isbn in listaLivros:
@@ -59,6 +60,6 @@ def carregarLivrosArquivo():
                 info["notaAvaliacao"]
             )
             novoLivro.isbn = isbn
-            listaLivros[isbn] = novoLivro
+            listaLivros[int(isbn)] = novoLivro
     except FileNotFoundError:
         print("Arquivo não encontrado. Nenhum livro foi carregado.")

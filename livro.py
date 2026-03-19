@@ -19,7 +19,7 @@ class Livro:
         print("Titulo.................. "+self.titulo)
         print("Autor................... "+self.autor)
         print("Ano de Publicacao....... "+str(self.anoPublicacao))
-        print("Genero.................. "+self.genero)
+        print("Genero.................. "+self.genero.name)
         print("Nota de avaliação....... "+str(self.notaAvaliacao))
 
     def to_dict(self):
